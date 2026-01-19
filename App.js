@@ -7,6 +7,7 @@ import theme from "./src/themes/theme";
 import MyNavbar from "./src/components/ui/MyNavbar";
 import { useEffect } from "react";
 import StackNavigation from "./src/Navigation/StackNavigation";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
   const [load] = useFonts({
@@ -26,20 +27,19 @@ export default function App() {
   }
 
   return (
-    <PaperProvider theme={theme} style={styles.container}>
-      <NavigationContainer>
-        <MyNavbar />
-        <StackNavigation />
-      </NavigationContainer>
-    </PaperProvider>
+    <SafeAreaProvider>
+      <PaperProvider theme={theme} style={styles.container}>
+        <NavigationContainer>
+          <MyNavbar />
+          <StackNavigation />
+        </NavigationContainer>
+      </PaperProvider>
+    </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0d1117",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });

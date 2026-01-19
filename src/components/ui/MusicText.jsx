@@ -14,15 +14,18 @@ export default MusicText;
 
 const styles = StyleSheet.create({
   base: {
-    fontFamily: "OpenSans-regular", 
-    color:theme.colors.text
+    fontFamily: "OpenSans-regular",
+    fontSize:16,
+    color:theme.colors.onSurface
   },
   header: {
     fontFamily:"OpenSans-Bold",
     fontSize: 24,
+    color:theme.colors.onSurface
   },
   subheader: {
     fontFamily:"OpenSans-Medium",
-    fontSize: 18
+    fontSize: 18,
+    color:theme.colors.onSurface
   },
 });

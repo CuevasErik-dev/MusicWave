@@ -12,7 +12,7 @@ const MyNavbar = () => {
     >
       <Appbar.Content
         title={
-          <MusicText variant="header" style={{ color: theme.colors.text }}>
+          <MusicText variant="header">
             WaveMusic
           </MusicText>
         }
