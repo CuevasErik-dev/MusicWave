@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Appbar } from "react-native-paper";
-import MusicText from "./MusicText";
+import MusicText from "../ui/MusicText";
 import theme from "../../themes/theme";
 
 const MyNavbar = () => {
