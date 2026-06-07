@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
 import { PaperProvider } from "react-native-paper";
 import { useFonts } from "expo-font";
-import { NavigationContainer } from "@react-navigation/native";
+import {DefaultTheme as NavDefaultTheme, NavigationContainer } from "@react-navigation/native";
 import * as SplashScreen from "expo-splash-screen";
 import theme from "./src/themes/theme";
-import MyNavbar from "./src/components/ui/MyNavbar";
+import MyNavbar from "./src/components/layout/MyNavbar";
 import { useEffect } from "react";
 import StackNavigation from "./src/Navigation/StackNavigation";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -25,11 +25,18 @@ export default function App() {
   if (!load) {
     return null;
   }
+  const navigationTheme = {
+    ...NavDefaultTheme,
+    colors: {
+      ...NavDefaultTheme.colors,
+      background: theme.colors.background,
+    },
+  };
 
   return (
     <SafeAreaProvider>
       <PaperProvider theme={theme} style={styles.container}>
-        <NavigationContainer>
+        <NavigationContainer theme={navigationTheme}>
           <MyNavbar />
           <StackNavigation />
         </NavigationContainer>
@@ -41,5 +48,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: theme.colors.background,
   },
 });

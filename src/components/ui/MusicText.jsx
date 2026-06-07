@@ -2,7 +2,7 @@ import { StyleSheet, Text, TextProps } from "react-native";
 import React from "react";
 import theme from "../../themes/theme";
 
-const MusicText = ({ style, children,variant = "", ...props }) => {
+const MusicText = ({ style, children,variant = "base", ...props }) => {
   return (
     <Text style={[styles.base, styles[variant], style]} {...props}>
       {children}
